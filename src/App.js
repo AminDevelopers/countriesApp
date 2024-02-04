@@ -17,6 +17,12 @@ export default function App() {
       .catch((error) => console.log(error));
   }, []);
 
+  const [inputVal, setInputVal] = useState("");
+
+  const handleInputVal = (e) => {
+    setInputVal(e.target.value);
+  };
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -25,7 +31,13 @@ export default function App() {
       children: [
         {
           path: "/",
-          element: <Countries data={data} />,
+          element: (
+            <Countries
+              data={data}
+              inputVal={inputVal}
+              handleInputVal={handleInputVal}
+            />
+          ),
         },
         {
           path: "/:name",

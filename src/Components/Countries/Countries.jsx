@@ -2,7 +2,7 @@ import React from "react";
 import "./Countries.css";
 import Cards from "../Cards/Cards";
 
-export default function Countries({ data }) {
+export default function Countries({ data, inputVal, handleInputVal }) {
   return (
     <div className="Countries">
       <div className="container">
@@ -10,6 +10,8 @@ export default function Countries({ data }) {
           <div className="input">
             <ion-icon name="search-outline"></ion-icon>
             <input
+              value={inputVal}
+              onChange={handleInputVal}
               className="input"
               type="text"
               placeholder="Search for a country..."
