@@ -1,0 +1,51 @@
+.container {
+    padding-top: 3em;
+    padding-inline: 3em;
+    background-color: hsl(0, 0%, 98%);
+    height: 100vh;
+
+    .top {
+        padding: .8em 1.4em;
+        display: flex;
+        justify-content: space-between;
+
+        .input {
+            display: flex;
+            border-radius: 10px;
+            background-color: white;
+            align-items: center;
+            column-gap: .8em;
+            padding-left: .8em;
+
+            ion-icon {
+                font-size: 1.3rem;
+            }
+
+            input {
+                padding-block: 1em;
+                border-radius: 10px;
+                font-family: poppins;
+                font-weight: 500;
+                border: none;
+                outline: none;
+                padding-right: 7em;
+            }
+
+        }
+
+        .filter {
+            display: flex;
+
+            select {
+                padding: .9em 2.3em;
+                font-family: poppins;
+                text-transform: capitalize;
+                font-weight: 500;
+                border: none;
+                outline: none;
+                border-radius: 10px;
+            }
+        }
+
+    }
+}

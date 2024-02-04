@@ -1,0 +1,138 @@
+.CardDetail {
+    margin-block: 5em;
+}
+
+.top {
+    display: flex;
+    margin-inline: 2em;
+}
+
+.back {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2em;
+    column-gap: .4em;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    p {
+        text-transform: capitalize;
+    }
+
+    ion-icon {
+        font-size: 1.2rem;
+    }
+}
+
+.back:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.block h1 {
+    margin-bottom: 1.5em;
+}
+
+
+
+.errorCard {
+    display: grid;
+    place-content: center;
+    place-items: center;
+}
+
+.flex {
+    display: flex;
+    margin-top: 10em;
+    line-height: .3;
+    place-content: center;
+    column-gap: 5em;
+
+    img {
+        max-width: 100%;
+        object-fit: cover;
+    }
+}
+
+.info {
+    display: flex;
+    column-gap: 6em;
+}
+
+.native {
+    display: flex;
+    align-items: center;
+    column-gap: .4em;
+
+    p:first-of-type {
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+}
+
+.subregion {
+    display: flex;
+    align-items: center;
+    column-gap: .4em;
+
+    p:first-of-type {
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+}
+
+.level {
+    display: flex;
+    align-items: center;
+    column-gap: .4em;
+
+    p:first-of-type {
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+}
+
+.currencies {
+    display: flex;
+    align-items: center;
+    column-gap: .4em;
+
+    p:first-of-type {
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+}
+
+.languages {
+    display: flex;
+    align-items: center;
+    column-gap: .4em;
+
+    p:first-of-type {
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+}
+
+.border {
+    display: flex;
+    margin-top: 3em;
+    align-items: center;
+    column-gap: 1em;
+
+    p:first-of-type {
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+}
+
+.borderName {
+    padding: .8em 1.4em;
+    border-radius: 5px;
+    text-transform: capitalize;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
