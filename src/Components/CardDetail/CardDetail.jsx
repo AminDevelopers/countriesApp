@@ -35,10 +35,11 @@ export default function CardDetail({ data }) {
               <div className="native">
                 <p>native name:</p>
                 <p>
-                  {" "}
-                  {foundCard.name.nativeName
-                    ? Object.values(foundCard.name.nativeName)[0].common
-                    : null}{" "}
+                  {foundCard.name.nativeName ? (
+                    Object.values(foundCard.name.nativeName)[0]?.common
+                  ) : (
+                    <span>null</span>
+                  )}
                 </p>
               </div>
               <div className="population">
@@ -61,22 +62,44 @@ export default function CardDetail({ data }) {
             <div className="infoRight">
               <div className="level">
                 <p>top level domain:</p>
-                <p> {Object.values(foundCard.tld)} </p>
+                <p>
+                  {foundCard.tld ? (
+                    Object.values(foundCard.tld)[0]
+                  ) : (
+                    <span>null</span>
+                  )}
+                </p>
               </div>
               <div className="currencies">
                 <p>currencies:</p>
-                <p> {Object.values(foundCard.currencies)[0].name} </p>
+                <p>
+                  {foundCard.currencies ? (
+                    Object.values(foundCard.currencies)[0]?.name
+                  ) : (
+                    <span>null</span>
+                  )}
+                </p>
               </div>
               <div className="languages">
                 <p>languages:</p>
-                <p> {Object.values(foundCard.languages).join(", ")} </p>
+                <p>
+                  {foundCard.languages ? (
+                    Object.values(foundCard.languages)?.join(", ")
+                  ) : (
+                    <span>null</span>
+                  )}
+                </p>
               </div>
             </div>
           </div>
           <div className="border">
             <p>border countries:</p>
             <p className="borderName">
-              {Object.values(foundCard.borders).join(",  ")}
+              {foundCard.borders ? (
+                Object.values(foundCard.borders)?.join(",  ")
+              ) : (
+                <span>null</span>
+              )}
             </p>
           </div>
         </div>

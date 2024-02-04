@@ -136,3 +136,23 @@
     text-transform: capitalize;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+
+@media screen and (max-width: 950px) {
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 3em;
+
+        .block h1 {
+            text-align: center;
+            margin-top: .8em;
+        }
+
+        .info {
+            flex-direction: column;
+        }
+    }
+}
