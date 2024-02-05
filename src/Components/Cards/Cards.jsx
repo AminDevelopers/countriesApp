@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Cards.css";
 
-export default function Cards({ data, tempData }) {
+export default function Cards({ data }) {
   return (
     <div className="cardsContainer">
-      {tempData.map((element, index) => (
+      {data.map((element, index) => (
         <Link to={element.name.common} key={index} className="card">
           <img src={element.flags.png} alt="" />
           <h2> {element.name.common} </h2>

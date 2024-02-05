@@ -8,11 +8,15 @@ export default function Countries({ data }) {
 
   const research = (e) => {
     const searchTerm = e.target.value;
-    setTempData(
-      data.filter((element) =>
-        element.name.common.toLowerCase().startsWith(searchTerm)
-      )
-    );
+    if (searchTerm.trim() === "") {
+      setTempData(data);
+    } else {
+      setTempData(
+        data.filter((element) =>
+          element.name.common.toLowerCase().startsWith(searchTerm)
+        )
+      );
+    }
   };
 
   return (
@@ -41,7 +45,7 @@ export default function Countries({ data }) {
             </select>
           </div>
         </div>
-        <Cards data={data} tempData={tempData} />
+        <Cards data={tempData} />
       </div>
     </div>
   );
