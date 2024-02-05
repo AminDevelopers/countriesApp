@@ -45,8 +45,12 @@ html {
 }
 
 @media screen and (max-width: 850px) {
-    .navbar h2 {
-        white-space: nowrap;
-        font-size: .9rem;
+    .navbar {
+        padding-inline: 1em;
+
+        h2 {
+            white-space: nowrap;
+            font-size: .9rem;
+        }
     }
 }
