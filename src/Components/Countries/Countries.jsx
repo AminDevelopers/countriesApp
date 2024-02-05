@@ -1,8 +1,20 @@
 import React from "react";
 import "./Countries.css";
+import { useState } from "react";
 import Cards from "../Cards/Cards";
 
-export default function Countries({ data, inputVal, handleInputVal }) {
+export default function Countries({ data }) {
+  const [tempData, setTempData] = useState(data);
+
+  const research = (e) => {
+    const searchTerm = e.target.value;
+    setTempData(
+      data.filter((element) =>
+        element.name.common.toLowerCase().startsWith(searchTerm)
+      )
+    );
+  };
+
   return (
     <div className="Countries">
       <div className="container">
@@ -10,8 +22,7 @@ export default function Countries({ data, inputVal, handleInputVal }) {
           <div className="input">
             <ion-icon name="search-outline"></ion-icon>
             <input
-              value={inputVal}
-              onChange={handleInputVal}
+              onChange={research}
               className="input"
               type="text"
               placeholder="Search for a country..."
@@ -30,7 +41,7 @@ export default function Countries({ data, inputVal, handleInputVal }) {
             </select>
           </div>
         </div>
-        <Cards data={data} />
+        <Cards data={data} tempData={tempData} />
       </div>
     </div>
   );
