@@ -1,19 +1,21 @@
 import React from "react";
-import "./Countries.css";
 import { useState } from "react";
 import Cards from "../Cards/Cards";
+import "./Countries.css";
 
 export default function Countries({ data }) {
   const [tempData, setTempData] = useState(data);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const research = (e) => {
-    const searchTerm = e.target.value;
-    if (searchTerm.trim() === "") {
+    const newsearchTerm = e.target.value.toLowerCase();
+    setSearchTerm(newsearchTerm);
+    if (newsearchTerm.trim() === "") {
       setTempData(data);
     } else {
       setTempData(
         data.filter((element) =>
-          element.name.common.toLowerCase().startsWith(searchTerm)
+          element.name.common.toLowerCase().startsWith(newsearchTerm)
         )
       );
     }
@@ -45,7 +47,7 @@ export default function Countries({ data }) {
             </select>
           </div>
         </div>
-        <Cards data={tempData} />
+        <Cards data={searchTerm.trim() === "" ? data : tempData} />
       </div>
     </div>
   );
