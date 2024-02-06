@@ -4,11 +4,9 @@ img {
 }
 
 .cardsContainer {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     margin-block: 5em;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 4em;
 }
 
@@ -22,7 +20,6 @@ img {
     justify-content: center;
     flex-direction: column;
     padding: 1.4em;
-    width: 25%;
     border-radius: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
