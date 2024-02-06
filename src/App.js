@@ -9,11 +9,14 @@ import CardDetail from "./Components/CardDetail/CardDetail.jsx";
 
 export default function App() {
   const [data, setData] = useState([]);
-
+  const [tempData, setTempData] = useState(data);
   useEffect(() => {
     axios
       .get("https://restcountries.com/v3.1/all")
-      .then((response) => setData(response.data))
+      .then((response) => {
+        setData(response.data);
+        setTempData(response.data);
+      })
       .catch((error) => console.log(error));
   }, []);
 
@@ -25,7 +28,13 @@ export default function App() {
       children: [
         {
           path: "/",
-          element: <Countries data={data} />,
+          element: (
+            <Countries
+              data={data}
+              tempData={tempData}
+              setTempData={setTempData}
+            />
+          ),
         },
         {
           path: "/:name",

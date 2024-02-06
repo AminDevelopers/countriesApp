@@ -1,15 +1,15 @@
 import React from "react";
-import { useState } from "react";
 import Cards from "../Cards/Cards";
 import "./Countries.css";
 
-export default function Countries({ data }) {
-  const [tempData, setTempData] = useState(data);
-  const [searchTerm, setSearchTerm] = useState("");
+export default function Countries({ data, tempData, setTempData }) {
+  const handleContinent = (e) => {
+    setTempData(data.filter((element) => element.region === e.target.value));
+  };
 
   const research = (e) => {
     const newsearchTerm = e.target.value.toLowerCase();
-    setSearchTerm(newsearchTerm);
+    // setSearchTerm(newsearchTerm);
     if (newsearchTerm.trim() === "") {
       setTempData(data);
     } else {
@@ -35,19 +35,19 @@ export default function Countries({ data }) {
             />
           </div>
           <div className="filter">
-            <select name="select" id="selection">
+            <select onChange={handleContinent} name="select" id="selection">
               <option value="" selected disabled hidden>
                 filter by region
               </option>
-              <option value="africa">africa</option>
-              <option value="america">america</option>
-              <option value="asia">asia</option>
-              <option value="europe">europe</option>
-              <option value="oceania">oceania</option>
+              <option value="Africa">africa</option>
+              <option value="Americas">america</option>
+              <option value="Asia">asia</option>
+              <option value="Europe">europe</option>
+              <option value="Oceania">oceania</option>
             </select>
           </div>
         </div>
-        <Cards data={searchTerm.trim() === "" ? data : tempData} />
+        <Cards tempData={tempData} />
       </div>
     </div>
   );
