@@ -9,7 +9,6 @@ export default function Countries({ data, tempData, setTempData }) {
 
   const research = (e) => {
     const newsearchTerm = e.target.value.toLowerCase();
-    // setSearchTerm(newsearchTerm);
     if (newsearchTerm.trim() === "") {
       setTempData(data);
     } else {
